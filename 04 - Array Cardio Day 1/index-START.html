@@ -104,8 +104,15 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
-    data.reduce()
+    
+    let modesOfTransportation = data.reduce(function(allModes, mode) {
+      if (mode in allModes) {
+        allModes[mode]++;
+      } else {
+        allModes[mode] = 1;
+      }
+      return allModes;
+    }, {})
   </script>
 </body>
 </html>
